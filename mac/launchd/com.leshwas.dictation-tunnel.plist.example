@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Holds the SSH tunnel to the machine running the transcription server.
+     Replace: __SSH_KEY__  path to your private key
+              __USER__     login on the server
+              __HOST__     hostname or private-network address of the server
+              __PORT__     SSH port (22 unless you changed it)
+     KeepAlive=true reconnects automatically after sleep or a network drop. -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.leshwas.dictation-tunnel</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/ssh</string>
+        <string>-N</string>
+        <string>-o</string><string>ServerAliveInterval=30</string>
+        <string>-o</string><string>ServerAliveCountMax=3</string>
+        <string>-o</string><string>ExitOnForwardFailure=yes</string>
+        <string>-o</string><string>StrictHostKeyChecking=accept-new</string>
+        <string>-L</string><string>9876:127.0.0.1:9876</string>
+        <string>-p</string><string>__PORT__</string>
+        <string>-i</string><string>__SSH_KEY__</string>
+        <string>__USER__@__HOST__</string>
+    </array>
+    <key>KeepAlive</key>
+    <true/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/tmp/dictation-tunnel.err</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/dictation-tunnel.out</string>
+</dict>
+</plist>

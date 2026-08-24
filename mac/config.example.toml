@@ -1,0 +1,5 @@
+# Dictation — client settings. Copy to config.toml and adjust.
+server_url = "http://127.0.0.1:9876"   # local end of the SSH tunnel to the server
+hotkey = "<f5>"                        # record toggle, pynput syntax
+sound = true                           # click on start / stop
+restore_clipboard = false              # put the previous clipboard back after pasting

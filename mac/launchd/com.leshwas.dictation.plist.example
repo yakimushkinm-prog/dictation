@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Keeps the menu-bar client running. Replace __REPO__ with the absolute path
+     to your clone, e.g. /Users/you/projects/dictation -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.leshwas.dictation</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>__REPO__/mac/.venv/bin/python</string>
+        <string>__REPO__/mac/client.py</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>/tmp/dictation-client.err</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/dictation-client.out</string>
+</dict>
+</plist>
