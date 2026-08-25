@@ -37,7 +37,7 @@ def _load_cfg() -> dict:
 CFG = _load_cfg()
 
 SERVER_URL = CFG.get("server_url", "http://127.0.0.1:9876")
-HOTKEY = CFG.get("hotkey", "`")
+HOTKEY = CFG.get("hotkey", "<ctrl>+<esc>")
 SOUND = bool(CFG.get("sound", True))
 RESTORE_CLIPBOARD = bool(CFG.get("restore_clipboard", True))
 

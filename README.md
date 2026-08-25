@@ -85,7 +85,7 @@ cp config.example.toml config.toml
 python client.py
 ```
 
-A 🎙 icon appears in the menu bar. Press the hotkey (the backtick key `` ` `` by default), speak, press again.
+A 🎙 icon appears in the menu bar. Press the hotkey (`Ctrl+Esc` by default), speak, press again.
 Use **Test: record 4 s** from the menu to check the microphone without a hotkey.
 
 macOS will ask for **Microphone**, **Accessibility** and **Input Monitoring** permission.
@@ -106,7 +106,7 @@ python setup.py py2app -A
 | Key | Default | |
 |---|---|---|
 | `server_url` | `http://127.0.0.1:9876` | local end of the tunnel |
-| `hotkey` | `` ` `` | pynput syntax; a plain key like `` ` `` still types its character, so use a combination such as `<ctrl>+<alt>+d` if that gets in the way |
+| `hotkey` | `<ctrl>+<esc>` | pynput syntax. A plain character key such as `` ` `` works too, but keeps typing its character |
 | `sound` | `true` | click on start and stop |
 | `restore_clipboard` | `false` | put the previous clipboard back after pasting |
 
